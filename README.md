@@ -14,3 +14,16 @@ Things learned and used while building the app:
 - Pretty sure optimistic ui is an out of the box feature if you just add `use:enhance` to the form. All I know is it worked without all the crazy react hooks and that is a beautiful.
 - Declaring form actions
 - Streaming
+
+To run the app locally:
+
+1. Fork and clone
+2. run `npm install`
+3. Setup the following environment variables:
+   - GITHUB_ID - Create a github oauth app and get the id
+   - GITHUB_SECRET - Generate a secret in the oauth app
+   - AUTH_SECRET - run `openssl rand -hex 32` in the terminal and use that value for this env variable
+4. run `npx prisma db push`. You may have to run `npx prisma init` first to generate the sqlite db file
+5. run `npx prisma generate`
+6. Lastly, run `npx prisma db seed` to add seed data to the db
+7. Now you can run `npm run dev`.
